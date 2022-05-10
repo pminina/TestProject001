@@ -1,8 +1,10 @@
 package com.test001.TestProject001
 
 import org.junit.jupiter.api.Test
-import com.codeborne.selenide.Condition.*
-import com.codeborne.selenide.Selenide.*
+import org.openqa.selenium.By
+
+import static com.codeborne.selenide.Selenide.*
+import static com.codeborne.selenide.Condition.*
 
 class Lesson002 {
     @Test
@@ -14,7 +16,7 @@ class Lesson002 {
         searchInput.value = searchRequest
         searchInput.pressEnter()
 
-        def found = $$("@ ires .g")
+        def found = $$("h3.LC20lb")
         assert found.size() > 0
         assert found.first().text.contains(searchRequest)
 
